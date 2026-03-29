@@ -30,3 +30,12 @@ Kebab Case (kebab-case): Kelimeler arasına tire (-) işareti konularak birleşt
  Öğrenci Notu: Değişken isimlendirirken kelimeleri birleştirmemizin sebebi derleyicidir. Derleyici, her boşluğu yeni bir komut veya anahtar kelime sanır. 
 Örneğin giriş sayısı = 5 yazarsan derleyici hata verir; bu yüzden girişSayısı = 5 şeklinde tek bir bütün olarak iletmen gerekir.
 
+ DUZEN KURALLARIİyi bir kod düzeni, kodun yapısını vurgulamak ve okunabilirliği artırmak için biçimlendirmeyi kullanır. Bu standartlar, ortak çalışılan projelerde bir yazım birliği kurmayı ve okunabilirliği en üst seviyeye çıkarmayı amaçlar.
+PLATFORM AYARLARI: Yazılım geliştirme platformundaki (IDE) otomatik girintileme ve sekmeler gibi varsayılan kod düzenleme ayarları kullanılmalıdır.
+TEK İFADE KURALI: Her satırda sadece bir ifadeye yer verilmelidir.
+TEK BİLDİRİM KURALI: Her satırda sadece bir bildirim (değişken tanımlama vb.) bulunmalıdır.
+GİRİNTİLEME STANDARDI: Eğer satırlar otomatik olarak girintili değilse, devam eden satırlarda bir sekme (dört boşluk) karakteri genişliğinde girinti verilmelidir.
+BOŞ SATIR KULLANIMI: Metot tanımlamaları ve özellik tanımlamaları arasında en az bir boş satır eklenmelidir.
+PARANTEZ KULLANIMI: Bir ifadedeki kısımların görünürlüğünü ve anlaşılırlığını artırmak amacıyla parantez kullanılmalıdır.
+
+
