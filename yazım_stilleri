@@ -38,4 +38,16 @@ GİRİNTİLEME STANDARDI: Eğer satırlar otomatik olarak girintili değilse, de
 BOŞ SATIR KULLANIMI: Metot tanımlamaları ve özellik tanımlamaları arasında en az bir boş satır eklenmelidir.
 PARANTEZ KULLANIMI: Bir ifadedeki kısımların görünürlüğünü ve anlaşılırlığını artırmak amacıyla parantez kullanılmalıdır.
 
+YORUM OLUŞTURMA KURALLARI 
 
+Yorum satırları kod ile aynı satırda olmamalı, yeni bir satırda belirtilmelidir.
+
+Açıklamalar büyük harf ile başlamalıdır.
+
+Cümle biçiminde yazılmalı ve sonuna nokta (.) koyulmalıdır.
+
+Yorum işareti olan çift bölü (//) ile açıklama metni arasına bir boşluk bırakılmalıdır.
+
+Projedeki tüm katılımcılar, açıklamalara ait yönergelere uygun şekilde yorumları girmelidir.
+
+ÖĞRENCİ NOTU: Yazılım dillerinde bu tip kuralların birincil amacı, ortak çalışılan projelerde bir yazım birliği kurmak, tutarlılığı ve okunabilirliği artırmaktır. Böylece ekibe yeni katılanlar da ortama rahatlıkla dâhil olabilir.
