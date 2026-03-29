@@ -1,0 +1,32 @@
+Yaygın İsimlendirme Stilleri
+
+Camel Case (camelCase): İlk kelime küçük harfle başlar, sonraki kelimelerin ilk harfleri büyük yazılır ve boşluklar kaldırılır.
+
+
+Örnek: başarısızGirişSayısı 
+
+
+Pascal Case (PascalCase): İlk sözcük de dahil olmak üzere tüm sözcüklerin ilk harfleri büyük yazılır.
+
+
+Örnek: BaşarısızGirişSayısı 
+
+
+Snake Case (snake_case): Kelimeler arasına alt çizgi (_) konularak birleştirilir.
+
+
+Örnek: başarısız_giriş_sayısı 
+
+Snake Case (TÜMÜ BÜYÜK): Tüm harfler büyük yazılır. C# dahil çoğu dilde sabitleri (constants) tanımlarken kural olarak kullanılır.
+
+
+Örnek: BAŞARISIZ_GİRİŞ_SAYISI 
+
+Kebab Case (kebab-case): Kelimeler arasına tire (-) işareti konularak birleştirilir. Genellikle kodun içinde değil, URL yapılarında tercih edilir.
+
+
+Örnek: başarısız-giriş-sayısı
+
+ Öğrenci Notu: Değişken isimlendirirken kelimeleri birleştirmemizin sebebi derleyicidir. Derleyici, her boşluğu yeni bir komut veya anahtar kelime sanır. 
+Örneğin giriş sayısı = 5 yazarsan derleyici hata verir; bu yüzden girişSayısı = 5 şeklinde tek bir bütün olarak iletmen gerekir.
+
