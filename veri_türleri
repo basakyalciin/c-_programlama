@@ -1,0 +1,177 @@
+  VERİ TÜRLERİ
+Değişkenler programda kullanılan verilerin bellekte tutulan yerlerini gösteren adreslere verilen isimlerdir ve türlerine göre farklı boyutlarda verileri tutabilirler. 
+C# programlama dilinde veri tipleri temel olarak değer ve referans tipleri olmak üzere ikiye ayrılır.
+
+  DEĞER TİPLERİ: TAM SAYI TÜRLERİ
+byte: 1 Byte boyutundadır, 
+işaretsiz tam sayıları ifade eder ve 0 ile 255 arası değer alır.
+sbyte: 1 Byte boyutundadır, işaretli tam sayıları ifade eder ve -128 ile 127 arası değer alır.
+short: 2 Byte boyutundadır, işaretli tam sayıları ifade eder ve -32.768 ile 32.767 arası değerleri destekler.
+ushort: 2 Byte boyutundadır, işaretsiz tam sayıları ifade eder ve 0 ile 65.535 arası değerler için kullanılır.
+int: 4 Byte boyutundadır, işaretli tam sayıları ifade eder ve -2.147.483.648 ile 2.147.483.647 arası değerleri depolar.
+uint: 4 Byte boyutundadır, işaretsiz (sadece pozitif) sayıları temsil eder ve 0 ile 4.294.967.295 arası değer alır.
+long: 8 Byte boyutundadır, uzun tam sayıları ifade eder ve $-2^{63}$ ile $+2^{63}$ arası çok büyük değerleri destekler.
+ulong: 8 Byte boyutundadır, işaretsiz uzun tam sayıları ifade eder ve 0 ile $+2^{64}$ arası değer alır.
+
+  DEĞER TİPLERİ: GERÇEK SAYI TÜRLERİ
+float: 4 Byte boyutundadır, tek kayan virgüllü sayılar için kullanılır ve 7 basamağa kadar hassasiyet sunar.
+double: 8 Byte boyutundadır, çift kayan virgüllü sayılar için kullanılır ve 15-16 basamak hassasiyet sağlar.
+decimal: 16 Byte boyutundadır, diğer türlerden daha geniş bir değer aralığını ve en yüksek hassasiyeti destekleyen ondalıklı sayı tipidir.
+
+  DİĞER DEĞER TİPLERİ
+bool: 1 Byte boyutundadır, karar verme işlemlerinde kullanılan sadece true veya false değerlerini alabilen tiptir.
+char: 2 Byte boyutundadır, tek bir Unicode karakteri tutar ve her zaman tek tırnak (' ') içinde yazılır.
+
+  REFERANS TİPLERİ
+string: Karakter katarı yani metinler için kullanılır, çift tırnak (" ") içinde yazılır ve referans tipi olduğu için kesin bir boyutu yoktur.
+object: Bütün veri tiplerinin kendisinden türediği temel sınıftır ve her türlü veriyi referans olarak tutabilir.
+
+  KOD ÖRNEKLERİ VE YAZIM KURALLARI
+int sayac = -100; 
+uint sayac = 100u; // u soneki unsigned olduğunu belirtir 
+long uzun = 0xAB19; // 0x öneki sayının hexadecimal (onaltılık) sistemde olduğunu gösterir 
+float kesirli = 6.28f; // float tanımlarken f veya F soneki zorunludur 
+decimal d = 14.26M; // decimal tanımlarken M veya m soneki kullanılmalıdır 
+
+   ÖĞRENCİ NOTU: 
+C# dilinde sayısal değişkenlerin varsayılan ilk değeri 0, bool tipinin false ve referans tiplerinin ise null değeridir. 
+Doğru veri türünü seçmek hem bellek yönetimi hem de programın hızı açısından çok önemlidir.
+
+    TÜR DÖNÜŞTÜRME
+ C# programlama dilinde veri türleri arasında dönüşüm yapılabilmektedir. 
+Bu dönüşümler sayısal türler arasında açık/direk (explicit) ve kapalı/dolaylı (implicit) olarak gerçekleştirilir.
+  
+    KAPALI (IMPLICIT) DÖNÜŞÜM
+  Herhangi bir veri kaybı yaşanmayan dönüşümlerdir. 
+  Küçük türün büyük türe dönüştürülmesi olarak da tanımlanabilir.
+  Bu tarz dönüşümler serbest bırakılmıştır; programda herhangi bir bildirim yapılmasına gerek duyulmaz ve dönüşüm derleyici tarafından otomatik olarak yapılır.
+  Örneğin sbyte türü; short, int, long, float, double ve decimal türlerine otomatik olarak dönüştürülebilir. 
+  Benzer şekilde byte, short, char gibi küçük türler kendilerinden daha büyük kapasiteli türlere (long, double vb.) kapalı olarak dönüştürülebilir.
+  
+    AÇIK (EXPLICIT) DÖNÜŞÜMDerleyici tarafından doğrudan desteklenmeyen bir dönüşümün, belirli metotlar yardımıyla zor kullanarak dönüştürülmesidir.
+  Büyük türün küçük türe dönüştürülmesi olarak tanımlanır ve bu işlem sırasında veri kaybı oluşması muhtemeldir.
+  Büyük türdeki değer küçük türdeki sınırlar dâhilinde olsa bile, farklı türlerin atamasında derleyici hata verecektir. 
+  Bu hatalı dönüşümü düzeltmek için iki yöntem mevcuttur:Değişkenin başına parantez içinde hedef tür yazılabilir. 
+      Örneğin: y = (int)x;.System.
+   Convert sınıfının dönüşüm metotları kullanılabilir. 
+      Örneğin: y = Convert.ToInt32(x);.
+    
+      YAYGIN DÖNÜŞÜM FONKSİYONLARI
+   Convert.ToBoolean(): Veriyi Boolean türüne dönüştürür.
+   Convert.ToByte(): Veriyi Byte türüne dönüştürür.
+   Convert.ToInt32(): Veriyi Int türüne dönüştürür.
+   Convert.ToDouble(): Veriyi Double türüne dönüştürür.
+   Convert.ToString(): Veriyi String türüne dönüştürür.
+    
+    ÖĞRENCİ NOTU: Büyük bir kabı (örneğin double) küçük bir kaba (örneğin int) boşaltmaya çalıştığında, içindeki veri küçük kaba sığmayabilir ve taşma (veri kaybı) yaşanabilir. 
+    Bu yüzden derleyici sorumluluğu sana bırakır. Küçük kabı büyüğe boşaltırken taşma riski olmadığından derleyici bunu senin yerine otomatik olarak yapar.
+
+    BOXING VE UNBOXING (KUTULAMA VE KUTUDAN ÇIKARMA) 
+  Boxing, değer tipindeki bir değişkeni referans tipindeki bir nesneye aktarma işidir
+  Bu işlem sırasında değer türünün verisinin bir kopyası yığından (stack) alınıp öbeğe (heap) taşınır ve bu işlem otomatik olarak gerçekleşir.
+  Unboxing ise referans tipindeki bir nesnenin değerini değer tipindeki bir değişkene aktarmaktır.
+  Bu işlemde başvuru nesnesinin işaret ettiği veri öbekten alınarak yığına bir değer tipi olarak kopyalanır.
+  Unboxing işlemi yapılırken tip uyuşmazlığına dikkat edilmelidir; verinin kopyalanacağı yerin aynı tipte veya daha büyük bir veri tutabilecek büyüklükte olması gerekir.
+      
+      KOD ÖRNEĞİ
+  double db = 555662215482; object obj; obj = db; // Boxing işlemi burada gerçekleşir
+  double doubDb; doubDb = (double)obj; // Unboxing işlemi için açık dönüşüm kullanılır 
+      
+      İFADELER 
+  C# dilinde +, -, *, /, % gibi matematiksel operatörler kullanılarak bir değeri hesaplamak için oluşturulmuş matematiksel formüllere ifade adı verilmektedir.
+  Örnek olarak santimetre = inch * 0.3937; 
+  veya cevre = 2 * 3.14 * yaricap; 
+  gibi işlemler birer ifadedir.
+      
+      ÖĞRENCİ NOTU 
+Değer tipleri belleğin stack (yığın) alanında, referans tipleri ise heap (öbek) alanında tutulur.
+C# dilinde her şey bir nesne olarak düşünülebildiği ve her sınıf System.Object sınıfından türediği için bu kutulama işlemleri değerlerin nesne gibi davranmasını sağlar.
+Kutulama otomatik olsa da kutudan çıkarma işlemi (Unboxing) sırasında tip dönüşümünü manuel olarak belirtmen gerekir.
+
+  TEMEL İŞLEMLER (OPERATÖRLER)
+
+Programlama dilinde tek başlarına işlev ve anlamı olmayan fakat işlem yaparken kullanılan karakterlere operatör denilmektedir. 
+  Örneğin "a / b" ifadesindeki "/" sembolü operatör iken, a ve b ise operatörün etki ettiği operandlardır. 
+Operatörler ikiden fazla operand ile işlem yapmak için kullanıldıklarında belirli bir öncelik sırasını takip ederler.
+
+  ATAMA OPERATÖRÜ
+Bir değerin bir değişkene veya sabite atanmasında kullanılır ve "=" sembolü ile gösterilir. 
+Her zaman eşitliğin sağ tarafındaki ifade hesaplanarak sol taraftaki değişkene atanır.
+
+  TEKLİ ARİTMETİK OPERATÖRLER
+Bir tek operanda uygulanan ve değişkenin değerini bir artıran (++) veya bir azaltan (--) operatörlerdir. 
+Bu operatörler değişkenin önüne gelirse önce artırma/azaltma yapıp sonra atama yapar; sonuna gelirse önce atama yapıp sonra değeri değiştirir.
+
+  BİLEŞİK ATAMA OPERATÖRLERİ
+Aritmetik işlem ile atama işlemini birleştiren +=, -=, *=, /= ve %= gibi operatörlerdir. 
+Örneğin "sayaç += 5" ifadesi, sayacın mevcut değerine 5 ekleyip sonucu tekrar sayaca atayan "sayaç = sayaç + 5" işlemine denktir.
+
+  ARİTMETİK OPERATÖRLER
+Toplama (+), çıkarma (-), çarpma (*), bölme (/) ve mod alma (%) gibi temel matematiksel işlemler için kullanılırlar. 
+İki tam sayı bölündüğünde sonuç tam sayı olurken, operandlardan biri float veya double ise sonuç da o türe dönüşür.
+
+  KARŞILAŞTIRMA OPERATÖRLERİ
+İki değeri birbiriyle karşılaştıran ve sonucunda doğru (true) ya da yanlış (false) değerini döndüren operatörlerdir. 
+Bunlar arasında eşittir (==), eşit değildir (!=), küçüktür (<), küçük eşittir (<=), büyüktür (>) ve büyük eşittir (>=) sembolleri yer alır.
+
+  MANTIKSAL OPERATÖRLER
+Karşılaştırma işlemlerinin sonuçlarını birleştirmek veya tersini almak için kullanılırlar. "VE" (&&), "VEYA" (||) ve "DEĞİL" (!) olmak üzere üç ana mantıksal operatör bulunur.
+
+  ÖĞRENCİ NOTU: 
+İşlemlerde hata yapmayı önlemek için ifadeleri parantez () içine almak en güvenli yöntemdir; çünkü parantezler her zaman en yüksek işlem önceliğine sahiptir.
+
+  AKIŞ KONTROL YAPILARI
+C# programlama dilinde komutlar normal şartlarda yazıldıkları sıra ile yukarıdan aşağıya doğru çalışır. Akış kontrol yapıları, bu akış sırasında ihtiyaca yönelik denetim ve yönlendirme görevini üstlenmektedir. Bu yapılar başlıca üç kategoride toplanır: blok yapıları, yönlendiriciler (if-else, switch) ve döngüler (for, foreach, while, do..while).
+
+  BLOK YAPILARI
+Küme parantezleri { } arasına yazılmış kodlar sırasıyla çalıştırılır ve bu yapıya blok adı verilir. Blok içerisinde tanımlanan bir yerel değişkene blok dışından erişilemez; blok çalıştırıldıktan sonra bu değişkenin hafızadaki yeri silinir. Ancak blok içerisinden dış bloklardaki değişkenlere erişim imkânı bulunmaktadır.
+
+  YÖNLENDİRİCİLER (IF-ELSE, SWITCH)
+Program yazarken akışı değiştirmek veya kullanıcı seçimlerini yönlendirmek amacıyla if-else ve switch deyimleri kullanılır.
+
+  İF DEYİMİ: 
+Belirlenmiş mantıksal koşullara (true/false) göre farklı kod bloklarının çalışmasını sağlar. Koşul doğruysa if bloğu, yanlışsa varsa else if veya else blokları çalıştırılır. Ayrıca tek satırlı kullanım için "koşul ? doğru_değer : yanlış_değer" şeklinde Ternary If yapısı da mevcuttur.
+
+  SWITCH DEYİMİ: 
+Aynı durum için yapılacak kontrol işlemleri sayıca çok olduğunda if-else blokları yerine daha sade bir görünüm sunar. Kontrol edilecek ifade tam sayı türleri, karakter (char) veya metin (string) tiplerinden seçilmelidir; float veya double tipleri kullanılamaz. Her case ifadesi mutlaka bir atlama deyimi (break, return vb.) ile sonlandırılmalıdır.
+
+  DÖNGÜLER
+Yazılan kod içerisinde tekrar eden işlemler varsa döngülerden yararlanılır. C# dilinde dört ana döngü komutu bulunur:
+
+  FOR DÖNGÜSÜ: 
+Başlangıç değeri, koşul ve artış/azalış miktarı belirtilerek belirli sayıda tekrar edecek işlemler için kullanılır.
+
+  FOREACH DÖNGÜSÜ: 
+Herhangi bir dizi veya koleksiyon yapısı üzerindeki her bir eleman için otomatik olarak çalışır. Tekrar sayısı dizideki eleman sayısı kadardır.
+
+  WHILE DÖNGÜSÜ: 
+Belirtilen koşul sağlandığı sürece kod bloğu çalışmaya devam eder. Koşul en başta kontrol edildiği için koşul sağlanmazsa blok hiç çalışmayabilir.
+
+  DO WHILE DÖNGÜSÜ: 
+Diğer döngülerden farkı, koşul bloğun sonunda kontrol edildiği için kod bloğunun her zaman en az bir kere çalıştırılmasıdır.
+
+  AÇIKLAMA
+Akış kontrol yapılarını programın "karar verme mekanizması" olarak düşünebilirsin. 
+Blok yapıları kodun sınırlarını belirlerken, yönlendiriciler programın hangi yoldan gideceğini seçer, döngüler ise aynı yolu defalarca yürümemizi sağlar.
+
+  DİZİ YAPILARI (ARRAY): ÇOK BOYUTLU DİZİLER 
+İki boyutlu diziler yani matrislerin tanımı da tek boyutlu diziler gibi olmakla birlikte, sadece tanımlandıkları yerde ilave bir virgül ile belirtilmesi gerekmektedir.
+C# programlama dilinde iki boyutlu dizilerin yanı sıra üç ve dört boyutlu diziler de tanımlanabilmektedir.
+  
+  ÇOK BOYUTLU DİZİ TANIMLAMA YAZIM KURALLARI 
+int[,] ikiBoyutlu = new int [3,2]; // 3 satır ve 2 sütundan oluşan iki boyutlu bir tam sayı dizisi tanımlar.
+int[,] ilkDegerli = new int[,] { {8, 7}, {6, 5}, {4, 3}, {2, 1} }; // Tanımlama sırasında değerleri atanan iki boyutlu dizi.
+decimal [,,] ucBoyutlu; // Üç boyutlu dizi bildirimi.float[,,,] dortBoyutlu; // Dört boyutlu dizi bildirimi.
+  
+  DİZİ ELEMANLARINA ERİŞİM
+Çok boyutlu dizilerde elemanlara erişirken kullanılan ilk indis her zaman satırı, ikinci indis ise sütunu işaret etmektedir.
+Örneğin olcumler[1,2] = 26; ifadesi, dizinin 1. satır ve 2. sütunundaki elemana 26 değerini atar veya o değeri okur.
+  
+  AÇIKLAMA 
+Çok boyutlu diziler zihnimizde bir matris yapısı olarak canlandırılabilir. 
+Satır ve sütun mantığı sayesinde veriler tablo düzeninde saklanır. 
+Bu yapı, koordinat sistemleri veya tablo verileriyle çalışırken büyük kolaylık sağlar.
+  
+  ÖĞRENCİ NOTU 
+Diziler referans türü oldukları için isimlendirilmeleri gerekir ve boyutları tanımlandıkları an sabitlenir. 
+Uygulama çalışırken bu boyutlar değiştirilemez. Ayrıca dizinin tüm boyutlarındaki indisler, tek boyutlu dizilerde olduğu gibi her zaman 0'dan başlar.
