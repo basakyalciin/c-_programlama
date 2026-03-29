@@ -6,3 +6,5 @@ Hata Yönetimi: Özel durum yönetimleri ile gelişmiş hata algılama ve yönet
 LINQ: Kaynak ayırt etmeksizin verilerin ortak bir standartla işlenebilmesini sağlar.
 Gelişmiş İşlemler: Zaman uyumsuz işlem yönetimi ve dağıtılmış sistemlerin yönetimi gibi modern özellikleri destekler.
 Sürekli Güncellik: Günün ihtiyaçlarına uygun olarak sürekli güncellenerek kapsamlı bir geliştirme ortamı sağlar.
+
+Öğrenci Notu: > C#'ın "yüksek seviyeli" bir dil olması,bilgisayarın karmaşık donanım dilinden ziyade insan konuşma diline daha yakın olduğu anlamına gelir. Bu özellik, senin kod yazarken donanım detaylarıyla boğulmadan mantığa odaklanmanı sağlar.
