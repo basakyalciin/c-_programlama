@@ -1,1 +1,136 @@
+  DEĞİŞKEN VE SABİTLER
+
+Değişken, kelime anlamı olarak sürekli bir değişim içinde olan bir yapıyı ifade etmektedir.
+Bilgisayar dilinde ise içeriği program çalıştığı sürece doldurulup değiştirilebilen hafızadaki bir alandır.
+Bir değişkeni tanımlayan iki temel parametre vardır; bunlar değişkenin türü ve ismidir.
+TÜR: Hafızada saklanacak verinin içeriği hakkında bilgi verir.
+İSİM: Değişkenin hafızadaki yerine ulaşılmasını sağlayan bir etiket veya adres bilgisidir.
+
+  DEĞİŞKEN TANIMLAMA YAZIM KURALI
+
+Değişken tanımlarken şu şekilde bir yazım kuralı mevcuttur:
+değişkenTipi değişkenAdı = ilkDeğer; 
+int sayac = 100; // bir tam sayı depolar 
+float katsayi = 0.7987979; // bir ondalıklı sayı depolar 
+
+  ÖnEMLİ KURALLAR VE NOTLAR
+
+C#'ta bir değişkene herhangi bir değer atamadan kullanmaya izin verilmez.
+Eğer bir değişkeni kullanmak istiyorsak, o değişkene bir ilk değer verilmesi zorunludur.
+Değişken tanımlamaları program içinde istenilen yerde yapılabilir, bu konuda bir kısıtlama bulunmamaktadır.
+Değişkenler günlük hayatta kullandığımız kaplara benzetilebilir; örneğin bir su bardağı değişkeni temsil ederken içine konulan su, ayran veya meşrubat atanan değerleri temsil eder.
+AÇIKLAMA: Değişkenler kendilerine atanan değerlere göre hafızada farklı boyutlarda yer kaplayan bölgelerin etiket veya adres bilgisidir.
+
+  DEĞİŞKEN İSİMLENDİRMEDE KURALLAR
+Değişken isimlendirmelerinde büyük-küçük harf duyarlılığı vardır.
+Örneğin ogrenciSayisi, OgrenciSayisi ve ogrencisayisi gibi büyük-küçük harf değişiklikleri içeren isimler, farklı birer değişken olarak tanımlanır.
+Değişken isimleri nümerik bir karakter yani rakam ile başlayamaz. 
+Örneğin 3Sınıf şeklindeki bir kullanım yanlışken, Sınıf3 şeklindeki kullanım derleyici tarafından kabul edilen doğru bir isimlendirmedir.
+Değişken isimlerinde boşluk karakteri, tire (-) işareti ve tırnak (") işareti bulunamaz.Programda kullanılan tüm değişkenlerin isimleri mutlaka tek kelimelik olmalıdır.
+
+    SABİTLER
+Sabitler, değişkenler ile aynı yazım ve isimlendirme kurallarına uymak zorundadır.Hazırlanan program boyunca değerleri hiçbir şekilde değişmeyecek veriler sabit olarak tanımlanır.
+Sabit tanımlaması yapmak için ilgili veri tipinin başına "const" anahtar sözcüğü eklenir.
+Örneğin const double piSayisi = 3.14; şeklinde tanımlanan bir sabit, programın geri kalanında yeni bir değer alamaz.
+AÇIKLAMA: Sabitlerin değer atamasının mutlaka sabit ifadelerle yapılması zorunludur. 
+Ayrıca sabitler doğası gereği "static" nesneler oldukları için tanımlanırken ayrıca "static" anahtar kelimesinin kullanılmasına gerek duyulmaz.
+
+  ENUM (ENUMERATIONS) TÜRÜ
+C# programlama dilinde alabileceği değerler sabit olan değişkenler enum yani enumeration sabitleri olarak isimlendirilir.
+Program içerisinde sayısal türde yapılacak karşılaştırma ve işlemlerde kullanılan bu tür, kodun okunurluğunu artırır ve hata ayıklamasını kolaylaştırır.
+Enum sabitlerine herhangi bir değer ataması yapılmazsa, ilk elemanın değeri sıfırdan başlayarak birer birer artan sayısal değer alırlar.
+Bu türün varsayılan değişken tipi integer yani tam sayıdır.Enum sabitleri ayrıca byte, sbyte, short, ushort, long, ulong, int ve uint türlerinden de tanımlanabilirler.
+Diğer değişken türleri ile aynı isimlendirme kuralları enum sabitler için de geçerlidir.
+
+  ENUM KULLANIM ÖRNEĞİ
+enum Mevsimler { Ilkbahar, Yaz, Sonbahar, Kis }; 
+  Mevsimler m = Mevsimler.Sonbahar; 
+  Console.WriteLine($"{m} Mevsiminin sayısal karşılığı: {(int)m}"); 
+Mevsiminin sayısal karşılığı: 2 
+
+  AÇIKLAMA
+Enum yapısı, sayısal değerleri anlamlı isimlerle eşleştirerek kodun daha profesyonel ve hatasız yazılmasını sağlar. 
+Örneğin mevsimlerin sayısal karşılıklarını (0, 1, 2, 3) ezberlemek yerine isimleriyle kullanmak geliştiriciye büyük kolaylık sağlar.
+
+  ANAHTAR SÖZCÜKLER (KEYWORDS)
+C# programlama dili de diğer diller gibi, derleyicisi için özel anlamı olan, önceden tanımlanmış ve ayrılmış sözcükler içerir.
+Bu ayrılmış kelimelere Anahtar Kelimeler denir.
+Anahtar kelimeler; bir değişkenin adı, sınıf veya arayüz gibi tanımlayıcılar (identifer) olarak kullanılamazlar.
+
+  BELİRLEYİCİ ANAHTAR SÖZCÜKLER (MODIFIER KEYWORDS)
+Belirleyici anahtar sözcükler; türleri ve tür üyelerini kimlerin değiştirebileceğini belirten, programlama dili tarafından tanımlanmış anahtar sözcüklerdir.
+Belirleyiciler, programların belirli bölümlerinin diğer bölümler tarafından değiştirilmesine izin verir veya bunları engeller.
+Yaygın kullanılan belirleyici anahtar sözcükler şunlardır: abstract, async, const, event, extern, new, override, partial, readonly, sealed, static, unsafe, virtual, volatile.
+
+  ÖĞRENCİ NOTU: Anahtar sözcükleri derleyicinin "özel sözlüğü" gibi düşünebilirsin. 
+Derleyici bu kelimeleri gördüğünde ne yapacağını önceden bilir; bu yüzden bu kelimeleri kendi değişken ismin olarak kullanmaya çalıştığında derleyicinin kafası karışır ve hata verir.
+
+  GEÇERLİK BÖLGESİ
+C# programlama dilinde değişkenler sadece tanımlı olduğu bölgede geçerlidir.
+Eğer değişken tanımlandığı sınıfın bir bileşeni ise o sınıfın içindeki tüm metotların ve kod bloklarının bu değişkene erişim yetkisi vardır.
+Sınıftan türetilen nesne bilgileri bellekte durdukça sınıf değişkeni de kendi adres bilgisini korumaya devam eder.
+Kodun içerisindeki bloklarda tanımlı değişkenlere ise sadece tanımlandıkları bloktan ve varsa alt bloklardan erişilebilir.
+Blok aktif olduğu sürece değişkene erişilebilir, ancak blok işlenip bittikten sonra değişkenin bellekteki adresi silinir.
+Örneğin bir for döngüsünde kullanılan sayaç değişkeni sadece o döngü bloğu içinde geçerlidir ve blok tamamlandığında bellekten silinir.
+Aynı şekilde bir metot içinde tanımlanmış değişkenin bellekteki adresi de metot tamamlandıktan sonra silinmektedir.
+
+  YEREL VE SINIF DEĞİŞKENLERİ
+Yerel değişken: Bir metot, bir döngü veya küme parantezleri {} arasına yazılmış kod blokları içinde tanımlı değişkenlere verilen isimdir.
+Sınıf değişkenleri veya sınıf ögeleri: Doğrudan sınıf içerisinde tanımlanmış olan değişkenlere denmektedir.
+
+  AÇIKLAMA: 
+Değişkenlerin sadece kendi bölgelerinde geçerli olması, programın belleği daha verimli kullanmasını sağlar. 
+Bir değişkenin "yaşam süresi" tanımlandığı bloğun süresiyle sınırlıdır, böylece kullanılmayan veriler bellekte gereksiz yer kaplamaz.
+
+  DEĞER VE REFERANS TÜRLERİ
+C# programlama dilinde Değer ve Referans tipleri olmak üzere iki tür veri tipi yer almaktadır.
+
+  DEĞER TÜRLERİ
+Değer tipleri verinin değerini doğrudan üzerlerinde taşırlar ve taşıdıkları veriye göre bellek üzerinde yer kaplarlar.
+Kapladıkları yerin az olması bu verilere hızlı bir şekilde erişilebilmesine olanak sağlar.
+Bu veri türleri belleğin stack yani yığın alanında tutulmaktadırlar.
+Değer türlerine örnek olarak int, long, float, double, decimal, char, bool, byte, short, struct ve enum verilebilir.
+
+  REFERANS TÜRLERİ
+Referans türleri bellekte veri yerine verinin tutulduğu yerin adres bilgisini tutarlar.
+Referans türleri içeren bir ifadede işlemler nesnenin adresi üzerinden gerçekleştirilir.
+Referans türlerinin kendi üzerlerindeki verinin boyutları sabit değildir.Bu veri türleri belleğin heap yani öbek alanında tutulmaktadırlar.
+Referans türlerine örnek olarak string, object, class, interface, array, delegate ve pointer verilebilir.
+
+  ÖZEL DURUM: 
+
+  STRING TÜRÜ
+Metotlara parametre olarak aktarılan string değerler referans türü olmasına rağmen değer türü gibi kopyalanarak işleme alınır.
+
+  AÇIKLAMA
+Değer ve referans türleri arasındaki temel fark verinin bellekte nasıl saklandığıdır. 
+Değer türleri küçük veriler için hızlı erişim sağlarken referans türleri boyutu sabit olmayan daha karmaşık verilerin yönetilmesine imkan tanır.
+
+  REF VE OUT ANAHTAR KELİMELERİ
+C# programlama dilinde ref ve out anahtar kelimelerinin kullanılmasının iki temel amacı bulunmaktadır.
+
+  REF: Metodun kendi parametresini değiştirmesine izin vermek için kullanılır. 
+Normal şartlarda değer tipleri (int, double vb.) metotlara kopyalanarak geçirilir; ancak bu değerlerin referansları ile metotlara geçirilmesi istendiğinde ref anahtar sözcüğünden yararlanılır.
+
+  OUT: Metodun birden fazla değer döndürmesine izin vermek amacıyla kullanılır.
+
+  DİKKAT EDİLMESİ GEREKEN NOKTALAR
+Metot bildiriminde ref sözcüğü kullanıldıysa, bu metodun çağrılmasında da aynı sözcüğün kullanılması zorunludur.
+Referans ile metot çağırma işleminde, ref parametresi olarak gönderilen değişkene öncesinde mutlaka bir değer atanmış olması gerekmektedir. 
+Değer atanmadan gönderilen değişkenlerde hata alınacaktır.
+Out parametresi ile çağrılan değişkenlerin ilk değer atama zorunluluğu bulunmamaktadır; bu değişkenlere metodun içerisinde bir değer atanıp döndürüleceği varsayılır.
+
+  KOD ÖRNEĞİ
+static void daireAlanHesapla(ref double d)
+  {
+    d = 3.14 * d * d;
+  }
+double i = 5;
+
+daireAlanHesapla(ref i);
+
+  ÖĞRENCİ NOTU: 
+Normalde bir metoda bir sayı gönderdiğinde o sayının sadece bir kopyasıyla işlem yapılır, yani orijinal sayın değişmez. 
+Ancak ref veya out kullandığında, metodun eline sayının kendisi (adresi) geçer. 
+Böylece metot içinde yapılan bir değişiklik, senin orijinal değişkenini de kalıcı olarak günceller.
 
